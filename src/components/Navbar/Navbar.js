@@ -15,7 +15,7 @@ class Navbar extends React.Component {
         this.setState({
             menuOpened: !this.state.menuOpened,
             menuStateClass: !this.state.menuOpened ? 'navbar__hamburgerOpen' : 'navbar__hamburgerClosed'
-        }, () => console.log(`Menu opened: ${this.state.menuOpened} and <ul> classname: ${this.state.menuStateClass}`));
+        });
     }
 
     render() {
@@ -28,8 +28,6 @@ class Navbar extends React.Component {
             }
             return null;
         });
-
-        console.log(content);
 
         return(
             <nav className={`navbar ${this.state.menuStateClass}`}>

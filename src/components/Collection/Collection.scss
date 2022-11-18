@@ -3,7 +3,7 @@
 .collection {
     height: 90%;
     width: 100%;
-    padding: 5rem;
+    padding: 3rem;
     padding-top: 0;
 }
 
@@ -21,11 +21,75 @@
     width: 20%;
     border: none;
     background: $cta;
+    font-size: 150%;
+    font-weight: 600;
+    color: $main-4;
 }
 
 .items {
     height: 90%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
+}
+
+.bigpicture {
+    grid-area: 1 / 1 / 3 / 4;
+    padding-bottom: 0.5rem;
+}
+
+.bigpicture__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sidebar {
+    padding-left: 1rem;
+    min-height: 100%;
+    grid-area: 1 / 4 / 5 / 6;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.sidebar__item {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.sidebar__img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.description {
+    grid-area: 3 / 1 / 5 / 4;
+    font-size: 175%;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: $main-4;
+}
+
+.description__edit {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    padding: 1rem;
+    background: $cta;
+    border: none;
+}
+
+.description__save {
+    width: calc(100% / 3);
+    height: 12.5%;
+    background: $cta;
+    border: none;
+    font-weight: 600;
 }
