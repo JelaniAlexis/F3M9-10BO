@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import "react-router-dom";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Collection from './components/Collection/Collection';
+
+import CollectionPage from './components/CollectionPage/CollectionPage';
 import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import StandardCollection from './data/collection/StandardCollection';
+
 import './index.scss';
 
 const router = createBrowserRouter([
@@ -12,12 +15,16 @@ const router = createBrowserRouter([
         element: <Home/>,
     },
     {
+        path: '/login',
+        element: <Login/>
+    },
+    {
         path: "/collection",
-        element: <Collection/>,
+        element: <CollectionPage collection={StandardCollection}/>,
     },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router}/>
   </React.StrictMode>

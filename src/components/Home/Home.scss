@@ -105,7 +105,6 @@
     color: $main-4;
     margin-bottom: 5rem;
     font-size: 100%;
-    background: $main-3;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -122,36 +121,10 @@
     font-size: 300%;
 }
 
-.features__feature {
-    background: $main-2;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    height: 35rem;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    border-radius: 2rem;
-    align-items: center;
-    gap: 2rem;
-}
-
-.features__featureImg {
-    border: 0.5rem solid;
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-}
-
-.features__featureText {
-    max-width: 80%;
-    font-size: 175%;
-    text-align: center;
-}
-
 // Pricing
 
 .pricing {
-    padding: 5rem;
+    padding: 2rem;
     padding-top: 0;
     color: $main-4;
     display: flex;
@@ -171,95 +144,17 @@
     font-size: 200%;
 }
 
-.pricing__card {
-    height: 50rem;
-    min-width: 100%;
-    background: $main-3;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5rem;
-    gap: 3rem;
-    transition: all 0.15s;
-}
-
-.pricing__card:hover {
-    transform: scale(1.05);
-}
-
-.pricing__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    max-height: 40%;
-}
-
-.pricing__description {
-    max-width: 90%;
-    text-align: center;
-}
-
-.pricing__footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.pricing__button {
-    font-size: 100%;
-    font-weight: 600;
-    width: 100%;
-    border: none;
-    background: $cta;
-    padding: 1.5rem;
-    border-radius: 4rem;
-    color: $main-0;
-}
-
-.pricing__icon {
-    font-size: 300%;
-}
-
-.pricing__price {
-    text-align: center;
-    font-weight: 600;
-    font-size: 175%;
-}
-
-.pricing__cta {
-    position: relative;
-    padding: 4.2rem;
-    border: 0.8rem solid $main-4;
-    box-shadow: 0 0 5rem $cta;
-}
-
-.pricing__bestValue {
-    position: absolute;
-    top: -3rem;
-    right: -3rem;
-    padding: 2.5rem;
-    border-radius: 5rem;
-    background: $main-4;
-    color: $main-1;
-}
-
 // Contact
 
 .contact {
-    height: 70rem;
     font-size: 200%;
     color: $main-4;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 5rem;
-    gap: 5rem;
+    padding-bottom: 5rem;
+    gap: 2rem;
 }
 
 .contact__title {
@@ -268,57 +163,61 @@
 
 .contact__form {
     background: $main-3;
-    padding: 5rem;
-    width: 100%;
+    padding: 3rem;
+    width: 70%;
     height: 85%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr;
     gap: 3rem;
 }
 
 .contact__inputWrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    width: 50%;
+}
+
+.contact__messageWrapper {
+    grid-column: 1 / 3;
 }
 
 .contact__label {
     font-weight: 600;
     font-size: 125%;
-    text-align: start;
-    width: calc(100% + 2rem);
+    width: 100%;
 }
 
 .contact__input {
-    height: 2rem;
+    height: 4rem;
     width: 100%;
     background: $main-0;
     outline: none;
-    border: 0.2rem solid $main-2;
-    border-radius: 2rem;
-    padding: 1rem;
+    border: 0.3rem solid $main-4;
+    padding: 0.5rem;
     font-size: 100%;
 }
 
 .contact__message {
-    height: 10rem;
+    height: 12rem;
     resize: none;
     scrollbar-width: none;
-    font-family: sans-serif;
 }
 
 .contact__submit {
+    grid-column: 1 / 3;
+    justify-self:center;
     border: none;
-    width: 20%;
+    width: 30%;
+    height: 5rem;
     background: $cta;
-    font-size: 100%;
     padding: 1.5rem;
     border-radius: 3rem;
     font-weight: 600;
     color: $main-0;
+    cursor: pointer;
 }
 
 // Footer
@@ -351,7 +250,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    font-size: 200%;
+    font-size: 125%;
 }
 
 .footer__anchor {
@@ -366,12 +265,12 @@
 }
 
 .footer__copyright {
-    font-size: 175%;
+    font-size: 150%;
 }
 
 .footer__button {
     border: none;
-    font-size: 150%;
+    font-size: 100%;
     font-weight: 600;
     padding: 2rem;
     border-radius: 4rem;
@@ -432,4 +331,4 @@
         grid-column-start: 1;
         grid-column-end: 2;
     }
-}
+}   

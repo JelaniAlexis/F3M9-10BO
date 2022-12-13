@@ -1,0 +1,27 @@
+@import 'src/abstracts/colors';
+
+.features__feature {
+    background: $main-2;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    height: 35rem;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    border-radius: 2rem;
+    align-items: center;
+    gap: 2rem;
+}
+
+.features__featureImg {
+    border: 0.5rem solid;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+}
+
+.features__featureText {
+    max-width: 80%;
+    font-size: 175%;
+    text-align: center;
+}

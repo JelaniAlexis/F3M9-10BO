@@ -16,7 +16,7 @@
     visibility: hidden;
     height: 5rem;
     width: 0;
-    background: url('../../img/hamburger.png');
+    background: url('../../img/hamburger.webp');
     background-size: 100%;
     font-size: 100%;
     border: none;
@@ -45,6 +45,7 @@
     cursor: pointer;
 
     a {
+        font-size: 1.5rem;
         text-decoration: none;
         color: $main-4;
     }
@@ -58,9 +59,13 @@
 }
 
 .navbar__img {
-    height: auto;
+    height: 100%;
     aspect-ratio: 1 / 1;
     cursor: pointer;
+}
+
+.navbar__imglink {
+    height: 100%;
 }
 
 .navbar__cta {
