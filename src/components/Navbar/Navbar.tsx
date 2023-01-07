@@ -6,18 +6,13 @@ import Logo from '../../img/logo.webp';
 import { NavElement } from '../../data/types/types';
 
 type Props = {
-    content: Array<NavElement>
+    content: NavElement[]
 }
 
 const Navbar = ({content}: Props) => {
 
     const [menuOpened, setMenuOpened] = useState(false);
     const [menuStateClass, setMenuStateClass] = useState('navbar__hamburgerClosed');
-
-    const onMenuStateChange = () => {
-        setMenuOpened(menuOpened);
-        setMenuStateClass(!menuOpened ? 'navbar__hamburgerOpen' : 'navbar__hamburgerClosed');
-    }
 
     let navbarContent = content.map((element: NavElement, index: number) => {
         if (element.elementType === "Anchor") {
@@ -32,7 +27,10 @@ const Navbar = ({content}: Props) => {
     return(
         <nav className={`navbar ${menuStateClass}`}>
             <div className='navbar__always'>
-                <button className="navbar__hamburger" onClick={onMenuStateChange}></button>
+                <button className="navbar__hamburger" onClick={() => {
+                    setMenuOpened(menuOpened);
+                    setMenuStateClass(!menuOpened ? 'navbar__hamburgerOpen' : 'navbar__hamburgerClosed');
+                }}></button>
                 <Link className='navbar__imglink' to="/"><img className='navbar__img' alt="logo" src={Logo}></img></Link>
             </div>
             <ul className={`navbar__ul ${menuStateClass}`}>

@@ -1,14 +1,14 @@
 import Navbar from '../Navbar/Navbar';
 import CollectionNavbar from '../../data/navbars/CollectionNavbar';
-// import DescriptionModes from '../../data/enums/DescriptionModes';
+
 import missingImage from '../../img/missing-image.webp';
 import plus from '../../img/plus.webp';
 import './CollectionPage.scss';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Agent } from '../../data/types/types';
 
 type Props = {
-    collection: Array<Agent>
+    collection: Agent[]
 }
 
 const CollectionPage = ({ collection }: Props) => {
@@ -41,8 +41,8 @@ const CollectionPage = ({ collection }: Props) => {
     useEffect(() => {
         setSidebar(() => {
             const items = collection.map((item: Agent, index: number) => {
-                if (item.addButton) return <button key={index} className="sidebar__item"><img className="sidebar__img" src={plus} alt="Een agent." onClick={() => console.log("add button pressed.")}/></button>;
-                return <button key={index} className="sidebar__item">{item.img !== undefined ? <img className="sidebar__img" src={item.img.url} alt="Een agent." onClick={() => { setBigPicture(item.img); setDescription(renderDescription(item)); }}/> : <img className="sidebar__img" src={missingImage} alt="Geen bestand gevonden." onClick={() => { setBigPicture(item.img); setDescription(renderDescription(item)); }} />}</button>;
+                if (item.addButton) return <button key={index} className="sidebar__item"><img className="sidebar__img" src={plus} alt="Een agent." draggable={false}/></button>;
+                return <button key={index} className="sidebar__item">{item.img !== undefined ? <img className="sidebar__img" src={item.img.url} alt="Een agent." draggable={item.img.draggable === undefined ? true : item.img.draggable} onClick={() => { setBigPicture(item.img); setDescription(renderDescription(item)); }}/> : <img className="sidebar__img" src={missingImage} alt="Geen bestand gevonden." onClick={() => { setBigPicture(item.img); setDescription(renderDescription(item)); }} />}</button>;
             })
     
             return (
@@ -65,7 +65,7 @@ const CollectionPage = ({ collection }: Props) => {
                             <button className="filter">Filter #1</button>
                             <button className="filter">Filter #2</button>
                         </div>
-                        <img className="bigpicture__img" src={bigPicture?.url} alt="Geen bestand gevonden."/>
+                        <img className="bigpicture__img" draggable={false} src={bigPicture?.url} alt="Geen bestand gevonden."/>
                     </div>
                     {sidebar}
                     {description}

@@ -1,6 +1,6 @@
 import { Agent } from '../types/types';
 
-import JettImg from '../../img/Agents/Agents_Jett.webp';
+import JettImg from  '../../img/Agents/Agents_Jett.webp';
 import FadeImg from '../../img/Agents/Agents_Fade.webp';
 import RazeImg from '../../img/Agents/Agents_Raze.webp';
 import SkyeImg from '../../img/Agents/Agents_Skye.webp';
@@ -11,65 +11,65 @@ import ChamberImg from '../../img/Agents/Agents_Chamber.webp';
 const StandardCollection: Agent[] = [
     {
         name: "Jett",
-        img: JettImg,
+        img: { url: JettImg, draggable: false },
         agentClass: "Duelist",
-        description: "Jett is een Duelist die met hoogteverschillen, snelheid en tijdelijke blokkades van zichtlijnen opponenten kan desoriënteren. Ze is ook de enige agent die in de lucht volledig accuraat is dankzij haar Blade Storm.",
+        description: "Jett is een Duelist die met hoogteverschillen, snelheid en tijdelijke blokkades van zichtlijnen opponenten kan desoriënteren.",
         price: "Gratis",
         misc: "Jett is een van de eerste agents die speelbaar is gemaakt.",
         addButton: false,
     },
     {
         name: "Fade",
-        img: FadeImg,
+        img: { url: FadeImg, draggable: false },
         agentClass: "Initiator",
-        description: "Fade is een Initiator die specialiseert in mensen opsporen en ze in oncomfortabele plekken houden. Dit doet ze door haar Prowlers op mensen af te sturen, ze vast te zetten of door ze niks te laten horen.",
+        description: "Fade is een Initiator die specialiseert in mensen opsporen en ze in oncomfortabele plekken houden.",
         price: "5 Agent Contract Tiers (375.000 XP)",
         misc: "Fade is de 20e agent die in de game is toegevoegd.",
         addButton: false,
     },
     {
         name: "Raze",
-        img: RazeImg,
+        img: { url: RazeImg, draggable: false },
         agentClass: "Duelist",
-        description: "Raze is een Duelist die een ding of twee van explosieven afweet. Ze kan razendsnel door de lucht vliegen met haar Blast Packs, of gewoon de vijand opblazen.",
+        description: "Raze is een Duelist die op explosieven is gefocust.",
         price: "5 Agent Contract Tiers (375.000 XP)",
         misc: "Raze is de eerste agent die ooit is generft: ze had vroeger 2 Paint Shells.",
         addButton: false,
     },
     {
         name: "Skye",
-        img: SkyeImg,
+        img: { url: SkyeImg, draggable: false },
         agentClass: "Initiator",
-        description: "Skye is een Initiator die met haar krachten zowel agressief als informatie-gericht kan spelen. Haar taak is dan ook om haar team te helpen de site op te komen of om mensen op te sporen voordat ze de kans krijgen om aan te vallen.",
+        description: "Skye is een Initiator die met haar krachten zowel agressief als informatie-gericht kan spelen.",
         price: "5 Agent Contract Tiers (375.000 XP)",
         misc: "Skye was één van de twee agents die 3 flashbangs had. Dit is vervangen door 2 flashbangs die na 40 seconden opladen.",
         addButton: false,
     },
     {
         name: "Brimstone",
-        img: BrimstoneImg,
+        img: { url: BrimstoneImg, draggable: false },
         agentClass: "Controller",
-        description: "Brimstone is een Controller die ervoor zorgt dat de vijand niet zomaar door kan lopen, dankzij zijn zichtbelemmerende smokes en brandgranaat. Hij zorgt er ook voor dat zijn team makkelijker de site op kan komen met zijn Stim Beacon.",
+        description: "Brimstone is een Controller die met rook en een brandgranaat niet alleen ervoor zorgt dat de vijand niet zomaar door kan lopen, maar ook zijn team kan helpen het punt op te komen.",
         price: "Gratis",
         misc: "Brimstone is de enige gratis Controller.",
         addButton: false,
     },
     {
         name: "Viper",
-        img: ViperImg,
+        img: { url: ViperImg, draggable: false },
         agentClass: "Controller",
-        description: "Viper is een Controller die ervoor kan zorgen dat de Spike niet onschadelijk wordt gemaakt van veraf. Naast het feit dat ze hun zicht al blokkeert, zorgen al haar krachten ervoor dat de tegenstander minder HP heeft om mee te werken.",
+        description: "Viper is een Controller wiens speelstijl focust op de tegenstander's HP verlagen om ze makkelijk af te kunnen maken.",
         price: "5 Agent Contract Tiers (375.000 XP)",
-        misc: "Viper is de enige agent met 2 passive abilities: haar Fuel die haar krachten opgebruiken, en de Decay die vijanden krijgen wanneer ze door haar gadgets lopen.",
+        misc: "Viper is de enige agent met 2 passieve abilities: haar Fuel die haar krachten opgebruiken, en de Decay die vijanden krijgen wanneer ze door haar gadgets lopen.",
         addButton: false,
     },
     {
         name: "Chamber",
-        img: ChamberImg,
+        img: { url: ChamberImg, draggable: false },
         agentClass: "Sentinel",
-        description: "Chamber is een non-traditionele Sentinel door het feit dat hij, ondanks zijn verslomende val voornamelijk op de enemies moet schieten om hun voortgang te hinderen. Hij kan die trap ook gebruiken om voor de flank uit te kijken, of voor informatie of de vijand naar de andere site gaat.",
+        description: "Chamber is een non-traditionele Sentinel door het feit dat hij met wapens pushes moet stoppen, i.p.v. alleen maar zijn trap te kunnen gebruiken.",
         price: "5 Agent Contract Tiers (375.000 XP)",
-        misc: "Chamber is de enige agent met 2 alternatieve wapens in zijn kit: Headhunter, een wapen wat op de Sheriff lijkt met een scope, en Tour de Force, een wapen wat op de Operator lijkt maar sneller kan schieten.",
+        misc: "Chamber is de enige agent met 2 wapens in zijn kit: Headhunter, een Sheriff met een scope, en Tour de Force, een 'gratis' Operator.",
         addButton: false,
     },
     {

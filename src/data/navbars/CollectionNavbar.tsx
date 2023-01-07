@@ -18,8 +18,8 @@ const CollectionNavbar: NavElement[] = [
     {
         name: "Contact",
         currentPage: false,
-        elementType: "Anchor",
-        location: "#contact",
+        elementType: "Link",
+        location: "/#contact",
         cta: false,
     },
     {

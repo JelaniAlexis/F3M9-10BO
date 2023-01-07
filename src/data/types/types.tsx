@@ -7,7 +7,8 @@ export type NavbarElementTypes = "Anchor" | "Link"
  */
 export type Image = {
     url: string,
-    altText: string
+    altText?: string,
+    draggable?: boolean,
 }
 
 /**

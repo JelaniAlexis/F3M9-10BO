@@ -13,11 +13,9 @@ import FeatureCard from '../FeatureCard/FeatureCard';
 
 import { Feature, Subscription } from '../../data/types/types';
 
-import React from 'react';
-
 const Home = () => {
 
-    const renderFeatures = (features: Array<Feature>) => {
+    const renderFeatures = (features: Feature[]) => {
         return (
             features.map((feature: Feature, index: number)=> {
                 return ( <FeatureCard key={index} featureObject={feature}/> )
@@ -25,7 +23,7 @@ const Home = () => {
         )
     }
 
-    const renderPricingCards = (pricingCards: Array<Subscription>) => {
+    const renderPricingCards = (pricingCards: Subscription[]) => {
         return (
             pricingCards.map((pricingCard: Subscription, index: number)=> {
                 if (pricingCard.bestValue) return ( <PricingCard key={index} pricingsObject={pricingCard} cta={true} /> );
