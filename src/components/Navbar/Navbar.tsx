@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../img/logo.webp';
-import NavElementTypes from '../../data/enums/NavElementTypes';
 import { NavElement } from '../../data/types/types';
 
 type Props = {
@@ -21,10 +20,10 @@ const Navbar = ({content}: Props) => {
     }
 
     let navbarContent = content.map((element: NavElement, index: number) => {
-        if (element.elementType === NavElementTypes.Anchor) {
+        if (element.elementType === "Anchor") {
             return (<li key={index} className={element.cta ? "navbar__li navbar__cta" : "navbar__li"}><a href={element.location}>{element.name}</a></li>);
         }
-        if (element.elementType === NavElementTypes.Link) {
+        if (element.elementType === "Link") {
             return (<li key={index} className={element.cta ? "navbar__li navbar__cta" : "navbar__li"}><Link to={element.location}>{element.name}</Link></li>)
         }
         return null;

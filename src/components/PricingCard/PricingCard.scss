@@ -3,7 +3,7 @@
 .pricing__card {
     min-height: 50rem;
     min-width: 100%;
-    background: $main-1;
+    background: $main-3;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
@@ -64,8 +64,8 @@
 .pricing__cta {
     position: relative;
     padding: 4.2rem;
-    border: 0.8rem solid $main-4;
-    box-shadow: 0 0 3rem $main-4;
+    border: 0.75rem solid $main-4;
+    box-shadow: 0 0 2rem $main-4;
 }
 
 .pricing__bestValue {

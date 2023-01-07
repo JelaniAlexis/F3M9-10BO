@@ -1,6 +1,4 @@
-import AgentClass from "../enums/AgentClass"
-import NavbarElementTypes from "../enums/NavElementTypes"
-
+export type NavbarElementTypes = "Anchor" | "Link"
 /**
  * The attributes that make up an image.
  * 
@@ -17,7 +15,7 @@ export type Image = {
  * 
  * @param {string} name - What the feature is called.
  * @param {string} description - Describes the feature in more detail.
- * @param {Image} img - The image's attributes.
+ * @param {Image} img - The given image.
  */
 
 export type Feature = {
@@ -62,6 +60,8 @@ export type NavElement = {
     cta: boolean
 }
 
+export type AgentClass = "Duelist" | "Initiator" | "Controller" | "Sentinel"
+
 /**
  * The attributes that make up an Agent.
  * 
@@ -83,3 +83,5 @@ export type Agent = {
     misc?: string,
     addButton: boolean,
 }
+
+export type AgentDescriptionMode = "Display" | "Add" | "Edit"

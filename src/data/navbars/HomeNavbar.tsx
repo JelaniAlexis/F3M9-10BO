@@ -1,38 +1,38 @@
-import NavElementTypes from "../enums/NavElementTypes"
+import { NavElement } from "../types/types";
 
-const HomeNavbar = [
+const HomeNavbar: NavElement[] = [
     {
         name: "Over",
         currentPage: false,
-        elementType: NavElementTypes.Anchor,
+        elementType: "Anchor",
         location: "#over",
         cta: false,
     },
     {
         name: "Features",
         currentPage: false,
-        elementType: NavElementTypes.Anchor,
+        elementType: "Anchor",
         location: "#features",
         cta: false,
     },
     {
         name: "Prijs",
         currentPage: false,
-        elementType: NavElementTypes.Anchor,
+        elementType: "Anchor",
         location: "#prijs",
         cta: false,
     },
     {
         name: "Contact",
         currentPage: false,
-        elementType: NavElementTypes.Anchor,
+        elementType: "Anchor",
         location: "#contact",
         cta: false,
     },
     {
         name: "Log in",
         currentPage: false,
-        elementType: NavElementTypes.Link,
+        elementType: "Link",
         location: "/collection",
         cta: true,
     },
