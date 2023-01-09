@@ -1,5 +1,6 @@
 import { Agent } from '../types/types';
 
+import PlusImg from '../../img/plus.webp';
 import JettImg from  '../../img/Agents/Agents_Jett.webp';
 import FadeImg from '../../img/Agents/Agents_Fade.webp';
 import RazeImg from '../../img/Agents/Agents_Raze.webp';
@@ -10,6 +11,7 @@ import ChamberImg from '../../img/Agents/Agents_Chamber.webp';
 
 const StandardCollection: Agent[] = [
     {
+        id: 0,
         name: "Jett",
         img: { url: JettImg, draggable: false },
         agentClass: "Duelist",
@@ -19,6 +21,7 @@ const StandardCollection: Agent[] = [
         addButton: false,
     },
     {
+        id: 1,
         name: "Fade",
         img: { url: FadeImg, draggable: false },
         agentClass: "Initiator",
@@ -28,6 +31,7 @@ const StandardCollection: Agent[] = [
         addButton: false,
     },
     {
+        id: 2,
         name: "Raze",
         img: { url: RazeImg, draggable: false },
         agentClass: "Duelist",
@@ -37,6 +41,7 @@ const StandardCollection: Agent[] = [
         addButton: false,
     },
     {
+        id: 3,
         name: "Skye",
         img: { url: SkyeImg, draggable: false },
         agentClass: "Initiator",
@@ -46,6 +51,7 @@ const StandardCollection: Agent[] = [
         addButton: false,
     },
     {
+        id: 4,
         name: "Brimstone",
         img: { url: BrimstoneImg, draggable: false },
         agentClass: "Controller",
@@ -55,6 +61,7 @@ const StandardCollection: Agent[] = [
         addButton: false,
     },
     {
+        id: 5,
         name: "Viper",
         img: { url: ViperImg, draggable: false },
         agentClass: "Controller",
@@ -64,6 +71,7 @@ const StandardCollection: Agent[] = [
         addButton: false,
     },
     {
+        id: 6,
         name: "Chamber",
         img: { url: ChamberImg, draggable: false },
         agentClass: "Sentinel",
@@ -73,7 +81,9 @@ const StandardCollection: Agent[] = [
         addButton: false,
     },
     {
+        id: 7,
         name: "Add",
+        img: { url: PlusImg, draggable: false },
         addButton: true,
     }
 ];

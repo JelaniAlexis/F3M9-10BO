@@ -1,58 +1,41 @@
 import Navbar from '../Navbar/Navbar';
+import AgentDescription from '../AgentDescription/AgentDescription';
+
 import CollectionNavbar from '../../data/navbars/CollectionNavbar';
 
 import missingImage from '../../img/missing-image.webp';
-import plus from '../../img/plus.webp';
+import { useEffect, useRef, useState } from 'react';
+import { Agent, DescriptionMode } from '../../data/types/types';
+
 import './CollectionPage.scss';
-import { useState, useEffect } from 'react';
-import { Agent } from '../../data/types/types';
 
 type Props = {
     collection: Agent[]
 }
 
-const CollectionPage = ({ collection }: Props) => {
+const CollectionPage = (props: Props) => {
 
+    const [collection, setCollection] = useState(props.collection);
     const [bigPicture, setBigPicture] = useState(collection[0].img);
-    const [sidebar, setSidebar] = useState<JSX.Element>();
-    const [description, setDescription] = useState<JSX.Element>()
-    // const [descriptionMode, setDescriptionMode] = useState(DescriptionModes.Display);
+    const [currentAgent, setCurrentAgent] = useState<number>(0);
+    const currentAgentRef = useRef<number>(currentAgent);
 
-    const renderDescription = (item: Agent) => {
-        return (
-            <div className="description">
-                <button className="description__edit"><i className="fa-solid fa-pen"></i></button>
-                <div className="description__main">
-                    <div className="description__header">
-                        <h2 className="description__title">{item.name}</h2>
-                        <p className="description__text">{item.description}</p>
-                    </div>
-                    <div className="description__footer">
-                        <p className="description__class"><b>Rol: </b>{item.agentClass}</p>
-                        <p className="description__pricing"><b>Kost:</b> {item.price}</p>
-                        <p className="description__misc"><b>Overige informatie:</b> {item.misc}</p>
-                    </div>
-                </div>
-                <button className="description__save"><b>Opslaan</b></button>
-            </div>
-        )
+    const [descriptionMode, setDescriptionMode] = useState<DescriptionMode>("Display");
+
+    const onModeChange = (newMode: DescriptionMode) => {
+       setDescriptionMode(newMode);
     }
 
-    useEffect(() => {
-        setSidebar(() => {
-            const items = collection.map((item: Agent, index: number) => {
-                if (item.addButton) return <button key={index} className="sidebar__item"><img className="sidebar__img" src={plus} alt="Een agent." draggable={false}/></button>;
-                return <button key={index} className="sidebar__item">{item.img !== undefined ? <img className="sidebar__img" src={item.img.url} alt="Een agent." draggable={item.img.draggable === undefined ? true : item.img.draggable} onClick={() => { setBigPicture(item.img); setDescription(renderDescription(item)); }}/> : <img className="sidebar__img" src={missingImage} alt="Geen bestand gevonden." onClick={() => { setBigPicture(item.img); setDescription(renderDescription(item)); }} />}</button>;
-            })
-    
-            return (
-                <div className="sidebar">
-                    {items}
-                </div>
-            )
-        });
-        setDescription(renderDescription(collection[0]));
-    }, [collection]);
+    const onAgentEdit = (newAgent: Agent) => {
+        setCollection(collection.map((agent: Agent, index: number) => {
+            if (agent.id === newAgent.id) return newAgent;
+            return agent;
+        }));
+    }
+
+    useEffect(() => {    
+        currentAgentRef.current = currentAgent;
+    }, [currentAgent])
 
     return(
         <>
@@ -67,8 +50,24 @@ const CollectionPage = ({ collection }: Props) => {
                         </div>
                         <img className="bigpicture__img" draggable={false} src={bigPicture?.url} alt="Geen bestand gevonden."/>
                     </div>
-                    {sidebar}
-                    {description}
+                    
+                    <div className="sidebar">
+                        { collection.map((item: Agent, index: number) => item.addButton
+                            ?
+                            <button key={index} className="sidebar__item">
+                                <img className="sidebar__img" src={item.img.url} alt="Een agent." draggable={false}/>
+                            </button>
+                            :
+                            <button key={index} className="sidebar__item">
+                                {
+                                    item.img !== undefined ? <img className="sidebar__img" src={item.img.url} alt="Een agent." draggable={item.img.draggable === undefined ? true : item.img.draggable} onClick={() => { setBigPicture(item.img); setCurrentAgent(index); }}/>
+                                    :
+                                    <img className="sidebar__img" src={missingImage} alt="Geen bestand gevonden." onClick={() => { setBigPicture(item.img); setCurrentAgent(index) }} />
+                                }
+                            </button>
+                        )}
+                    </div>
+                    <AgentDescription descriptionMode={descriptionMode} agent={collection[currentAgentRef.current]} onModeChange={onModeChange} onAgentEdit={onAgentEdit}/>
                 </section>
             </main>
         </>

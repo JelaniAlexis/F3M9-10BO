@@ -1,18 +1,18 @@
 export type NavbarElementTypes = "Anchor" | "Link"
 /**
- * The attributes that make up an image.
+ * @description The attributes that make up an image.
  * 
  * @param {string} url - The URL to the image.
  * @param {string} altText - The alt text for screenreaders to use to describe images.
  */
 export type Image = {
-    url: string,
-    altText?: string,
-    draggable?: boolean,
+    url: string
+    altText?: string
+    draggable?: boolean
 }
 
 /**
- * A FeatureCard's contents.
+ * @description A FeatureCard's contents.
  * 
  * @param {string} name - What the feature is called.
  * @param {string} description - Describes the feature in more detail.
@@ -26,7 +26,7 @@ export type Feature = {
 }
 
 /**
- * A PricingCard's contents
+ * @description A PricingCard's contents
  * 
  * @param {string} name - The subscription's name.
  * @param {string} description - Describes what is included in the subscription.
@@ -44,7 +44,7 @@ export type Subscription = {
 }
 
 /**
- * Represents a Navbar element
+ * @description Represents a Navbar element
  * 
  * @param {string} name - The text that shows in the Navbar element
  * @param {boolean} currentPage - Whether or not this is the current page.
@@ -61,11 +61,17 @@ export type NavElement = {
     cta: boolean
 }
 
-export type AgentClass = "Duelist" | "Initiator" | "Controller" | "Sentinel"
+export const agentClasses = [ "Duelist", "Initiator", "Controller", "Sentinel" ] as const
+/**
+ * @description The 4 classifications of Agents.
+ *
+ */
+export type AgentClass = typeof agentClasses[number];
 
 /**
- * The attributes that make up an Agent.
+ * @description The attributes that make up an Agent.
  * 
+ * @param {number} id - The ID of the Agent in the array.
  * @param {string} name - The agent's name.
  * @param {Image} img - The image's attributes.
  * @param {AgentClass} agentClass - The agent's class.
@@ -76,13 +82,36 @@ export type AgentClass = "Duelist" | "Initiator" | "Controller" | "Sentinel"
  */
 
 export type Agent = {
-    name: string,
-    img?: Image,
-    agentClass?: AgentClass,
-    description?: string,
-    price?: string,
-    misc?: string,
-    addButton: boolean,
+    id: number
+    name: string
+    img: Image
+    agentClass?: AgentClass
+    description?: string
+    price?: string
+    misc?: string
+    addButton: boolean
 }
 
-export type AgentDescriptionMode = "Display" | "Add" | "Edit"
+export const descriptionModes = [ "Display", "Add", "Edit" ] as const
+/**
+ * @description The mode in which the CollectionPage's description is in.
+ * 
+ */
+export type DescriptionMode = typeof descriptionModes[number];
+
+/**
+ * @description The attributes that make up the description of the CollectionPage.
+ * 
+ * @param {string} title - The name of the highlighted Agent.
+ * @param {string} description - More information on the Agent in question.
+ * @param {AgentClass} agentClass - The Agent's class.
+ * @param {string} pricing - The cost of unlocking this Agent.
+ * @param {string} misc - Other miscellaneous fact about the Agent.
+ */
+export type DescriptionData = {
+    title: string
+    description: string
+    agentClass: AgentClass
+    pricing: string
+    misc: string
+}
