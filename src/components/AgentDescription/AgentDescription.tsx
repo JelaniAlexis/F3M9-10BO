@@ -12,7 +12,11 @@ interface Props {
 
 const AgentDescription = ({agent, descriptionMode, onModeChange, onAgentEdit}: Props) => {
 
-    const [formInput, setFormInput] = useState<Agent>(agent);    
+    const [formInput, setFormInput] = useState<Agent>(agent);
+
+    useEffect(() => {
+        setFormInput(agent);
+    }, [agent])
  
     return (
         <div className="description">

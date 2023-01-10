@@ -4,7 +4,7 @@ import AgentDescription from '../AgentDescription/AgentDescription';
 import CollectionNavbar from '../../data/navbars/CollectionNavbar';
 
 import missingImage from '../../img/missing-image.webp';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Agent, DescriptionMode } from '../../data/types/types';
 
 import './CollectionPage.scss';
@@ -18,8 +18,6 @@ const CollectionPage = (props: Props) => {
     const [collection, setCollection] = useState(props.collection);
     const [bigPicture, setBigPicture] = useState(collection[0].img);
     const [currentAgent, setCurrentAgent] = useState<number>(0);
-    const currentAgentRef = useRef<number>(currentAgent);
-
     const [descriptionMode, setDescriptionMode] = useState<DescriptionMode>("Display");
 
     const onModeChange = (newMode: DescriptionMode) => {
@@ -27,15 +25,8 @@ const CollectionPage = (props: Props) => {
     }
 
     const onAgentEdit = (newAgent: Agent) => {
-        setCollection(collection.map((agent: Agent, index: number) => {
-            if (agent.id === newAgent.id) return newAgent;
-            return agent;
-        }));
+        setCollection(collection.map((agent: Agent) => agent.id === newAgent.id ? newAgent : agent ));
     }
-
-    useEffect(() => {    
-        currentAgentRef.current = currentAgent;
-    }, [currentAgent])
 
     return(
         <>
@@ -67,7 +58,7 @@ const CollectionPage = (props: Props) => {
                             </button>
                         )}
                     </div>
-                    <AgentDescription descriptionMode={descriptionMode} agent={collection[currentAgentRef.current]} onModeChange={onModeChange} onAgentEdit={onAgentEdit}/>
+                    <AgentDescription descriptionMode={descriptionMode} agent={collection[currentAgent]} onModeChange={onModeChange} onAgentEdit={onAgentEdit}/>
                 </section>
             </main>
         </>
