@@ -36,7 +36,6 @@ const AgentDescription = ({agent, descriptionMode, onModeChange, onAgentEdit}: P
                                     <p className="description__misc"><b>Overige informatie:</b> {agent.misc}</p>
                                 </div>
                             </div>
-                            <button className="description__save"><b>Opslaan</b></button>
                         </>
                     )
                 : descriptionMode === "Edit"  ?

@@ -15,13 +15,14 @@ const Navbar = ({content}: Props) => {
     const [menuStateClass, setMenuStateClass] = useState('navbar__hamburgerClosed');
 
     let navbarContent = content.map((element: NavElement, index: number) => {
-        if (element.elementType === "Anchor") {
-            return (<li key={index} className={element.cta ? "navbar__li navbar__cta" : "navbar__li"}><a href={element.location}>{element.name}</a></li>);
+        switch (element.elementType) {
+            case "Anchor":
+                return (<a href={element.location} key={index} className={element.cta ? "navbar__link navbar__cta" : "navbar__link"}>{element.name}</a>);
+            case "Link":
+                return (<Link to={element.location} key={index} className={element.cta ? "navbar__link navbar__cta" : "navbar__link"}>{element.name}</Link>);
+            default:
+                return (<p>How did you manage...</p>)
         }
-        if (element.elementType === "Link") {
-            return (<li key={index} className={element.cta ? "navbar__li navbar__cta" : "navbar__li"}><Link to={element.location}>{element.name}</Link></li>)
-        }
-        return null;
     });
 
     return(

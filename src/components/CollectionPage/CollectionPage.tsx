@@ -51,7 +51,9 @@ const CollectionPage = (props: Props) => {
                             :
                             <button key={index} className="sidebar__item">
                                 {
-                                    item.img !== undefined ? <img className="sidebar__img" src={item.img.url} alt="Een agent." draggable={item.img.draggable === undefined ? true : item.img.draggable} onClick={() => { setBigPicture(item.img); setCurrentAgent(index); }}/>
+                                    item.img !== undefined
+                                    ?
+                                    <img className="sidebar__img" src={item.img.url} alt="Een agent." draggable={item.img.draggable === undefined ? true : item.img.draggable} onClick={() => { setBigPicture(item.img); setCurrentAgent(index); }}/>
                                     :
                                     <img className="sidebar__img" src={missingImage} alt="Geen bestand gevonden." onClick={() => { setBigPicture(item.img); setCurrentAgent(index) }} />
                                 }
