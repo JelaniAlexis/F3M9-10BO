@@ -1,6 +1,6 @@
 import './PricingCard.scss';
 import React from 'react';
-import { Subscription } from '../../data/types/types';
+import { Subscription } from '../../common/types/types';
 
 type Props = {
     pricingsObject: Subscription

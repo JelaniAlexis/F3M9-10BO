@@ -1,0 +1,376 @@
+@import 'src/abstracts/colors';
+
+.home {
+    width: 100%;
+}
+
+// Intro
+.intro {
+    height: 85rem;
+    position: relative;
+    margin-bottom: 5rem;
+    font-size: 200%;
+
+    &__img {
+        height: 100%;
+        width: calc(100vw - (100vw - 100%));
+        max-width: calc(100vw - (100vw - 100%));
+        object-fit: cover;
+        margin: 0;
+    }
+
+    &__information {
+        color: $main-0;
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 16%;
+        left: 9%;
+        width: 50rem;
+        max-width: 70%;
+        height: 35%;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__login {
+        width: 45%;
+        padding: 1rem;
+        text-align: center;
+        font-size: 100%;
+        background: $cta;
+        border: none;
+        outline: none;
+        color: $main-0;
+        border-radius: 2rem;
+        text-decoration: none;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__p {
+        display: inline;
+    }
+}
+
+// About
+
+.about {
+    height: 50rem;
+    width: 100%;
+    color: $main-0;
+    display: flex;
+    flex-direction: row;
+    font-size: 200%;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+        height: 100%;
+        background: $main-4;
+        gap: 1.5rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+
+    &__p {
+        max-width: 80%;
+    }
+
+    &__img {
+        height: 100%;
+        object-fit: cover;
+        width: 50%;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+}
+
+// Features
+
+.features {
+    padding: 8rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    color: $main-4;
+    margin-bottom: 5rem;
+    font-size: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8rem;
+    }
+
+    &__title {
+    font-size: 400%;
+    }
+}
+
+// Pricing
+
+.pricing {
+    padding: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+    color: $main-4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    background: $main-2;
+    
+    &__title {
+    font-size: 400%;
+    }
+
+    &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5rem;
+    font-size: 200%;
+    }
+}
+
+// Contact
+
+.contact {
+    font-size: 200%;
+    color: $main-4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    gap: 2rem;
+
+    &__title {
+        font-size: 200%;
+    }
+
+    &__form {
+    background: $main-3;
+    padding: 3rem;
+    width: 70%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    }
+
+    &__inputWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__messageWrapper {
+        grid-column: 1 / 3;
+    }
+
+    &__label {
+        font-weight: 600;
+        font-size: 125%;
+        width: 100%;
+    }
+
+    &__input {
+        height: 4rem;
+        width: 100%;
+        background: $main-0;
+        outline: none;
+        border: 0.3rem solid $main-4;
+        padding: 0.5rem;
+        font-size: 100%;
+    }
+
+    &__message {
+        height: 12rem;
+        resize: none;
+        scrollbar-width: none;
+    }
+
+    &__submit {
+        grid-column: 1 / 3;
+        justify-self: center;
+        align-self: center;
+        border: none;
+        width: 30%;
+        height: 5rem;
+        background: $cta;
+        padding: 1.5rem;
+        border-radius: 3rem;
+        font-weight: 600;
+        color: $main-0;
+        cursor: pointer;
+    }
+}
+
+// Footer
+
+
+.footer {
+    padding: 6rem;
+    padding-bottom: 1.5rem;
+    background: $main-4;
+    color: $main-0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    &__columns {
+        background: $main-4;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 5fr 5fr 2fr;
+        gap: 8rem;
+        color: $main-0;
+    }
+
+    &__column {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        font-size: 125%;
+    }
+
+    &__anchor {
+        text-decoration: none;
+        color: $main-0;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__copyright {
+        font-size: 150%;
+    }
+
+    &__button {
+        border: none;
+        font-size: 100%;
+        font-weight: 600;
+        padding: 2rem;
+        border-radius: 4rem;
+        background: $cta;
+        color: $main-0;
+        width: 100%;
+    }
+
+    &__cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+// Media queries
+
+@media screen and (max-width: 1024px) {
+
+    .intro__information {
+        width: 100%;
+    }
+
+    .about {
+        flex-direction: column;
+
+        &__img {
+            border-bottom-left-radius: 2rem;
+            border-top-right-radius: 0;
+            width: 80%;
+            object-fit: cover;
+        }
+
+        &__text {
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 2rem;
+            width: 80%;
+            padding: 3rem;
+        }
+    }
+
+    .features__container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pricing__container {
+        width: 70%;
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        &__form {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        &__nameWrapper {
+            grid-row: 1 / 2;
+        }
+
+        &__emailWrapper {
+            grid-row: 2 / 3;
+        }
+
+        &__messageWrapper {
+            grid-row: 3 / 4;
+        }
+
+        &__submit {
+            width: 45%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .contact__submit {
+        width: 60%;
+    }
+
+    .features{
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .footer__columns {
+        grid-template-columns: 5fr 5fr 5fr;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .intro__login {
+        width: 80%;
+    }
+}

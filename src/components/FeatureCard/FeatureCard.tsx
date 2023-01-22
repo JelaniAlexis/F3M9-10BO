@@ -1,6 +1,6 @@
 import './FeatureCard.scss';
 import React from 'react';
-import { Feature } from '../../data/types/types';
+import { Feature } from '../../common/types/types';
 
 type Props = {
     featureObject: Feature

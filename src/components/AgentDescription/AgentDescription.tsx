@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Agent, AgentClass, agentClasses, DescriptionMode } from "../../data/types/types";
+import { Agent, AgentClass, agentClasses, DescriptionMode } from "../../common/types/types";
 
 import './AgentDescription.scss';
 
