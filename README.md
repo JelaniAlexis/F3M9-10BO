@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Collezione
+Dé app voor informatie over Valorant agents.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="/src/assets/logo.webp" alt="Collezione logo" width="300" />
 
-## Available Scripts
+Project door Jelani Alexis, SD3C. [Klik hier voor de demo.](https://31781.hosts1.ma-cloud.nl/collezione)
 
-In the project directory, you can run:
+## User Stories
 
-### `yarn start`
+### Verplicht
+- [x] **US #1:** Als (potentiële) gebruiker wil ik informatie over het product (Collezione) zodat ik meer te weten kom.
+- [x] **US #2:** Als (potentiële) gebruiker wil ik contact kunnen opnemen zodat ik mijn vraag (of opmerking) kan stellen.
+- [x] **US #3:** Als (potentiële) gebruiker wil ik de verschillende abonnementen op een rij zien zodat ik een overwogen keuze kan maken
+- [x] **US #4:** Als gebruiker wil ik kunnen inloggen zodat ik mijn collectie kan beheren
+- [x] **US #5:** Als gebruiker wil ik mijn collectie kunnen zien zodat ik al mijn producten op een rij heb staan.
+- [x] **US #6:** Als gebruiker wil ik een individueel product kunnen bekijken om informatie over een bepaald product op te zoeken / te vinden.
+- [x] **US #7:** Als gebruiker wil ik producten kunnen onderhouden om mijn collectie te updaten.
+- [x] **US #8:** Als gebruiker wil ik collecties van andere gebruikers kunnen bekijken om inspiratie op te doen.
+- [ ] **US #9:** Als gebruiker ik mijn collectie kunnen filteren zodat ik makkelijk producten kan vinden.
+- [x] **US #10:** Als gebruiker wil ik mijn collectie makkelijk kunnen delen met vrienden om ze enthousiast te maken.
+- [ ] **US #11:** Als gebruiker wil ik op basis van mijn behoeften en mijn collectie een product voorgeschoteld krijgen zodat ik niet zelf hoef te kiezen
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Extra
+- [ ] **US #12** Als gebruiker wil ik producten kunnen toevoegen en kunnen verwijderen zodat mijn collectie up to date blijft.

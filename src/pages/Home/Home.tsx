@@ -47,8 +47,8 @@ const Home = () => {
                 <img className='intro__img' src={boyGaming} alt="Een gamend kind."/>
                 <div className="intro__information">
                     <div className="intro__text">
-                        <h1 className="intro__heading">Vallezione</h1>
-                        <p className="intro__p">Dé app voor informatie over <b>Valorant</b>.</p>
+                        <h1 className="intro__heading">Collezione</h1>
+                        <p className="intro__p">Dé app voor informatie over <b>Valorant</b> agents.</p>
                     </div>
                     <Link to='/login' className="intro__login">Meld je nu aan!</Link>
                 </div>
@@ -56,8 +56,8 @@ const Home = () => {
 
             <article className="about" id='over'>
                 <div className="about__text">
-                    <h2 className="about__heading">Over Vallezione</h2>
-                    <p className="about__p">Vallezione heeft alle informatie die je nodig hebt over Valorant's agents.</p>
+                    <h2 className="about__heading">Over Collezione</h2>
+                    <p className="about__p">Collezione heeft alle informatie die je nodig hebt over Valorant's agents.</p>
                 </div>
                 <img src={valorantClip} alt="Een perfect voorbeeld van iets wat compleet fout, maar tegelijkertijd goed gaat." className="about__img" />
             </article>
