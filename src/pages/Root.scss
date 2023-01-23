@@ -16,7 +16,6 @@
     visibility: hidden;
     height: 5rem;
     width: 0;
-    background: url('../assets/hamburger.webp');
     background-size: 100%;
     font-size: 100%;
     border: none;
@@ -42,6 +41,7 @@
     width: 12.5%;
     height: 50%;
     outline: none;
+    border: none;
     cursor: pointer;
     font-size: 1.5rem;
     text-decoration: none;

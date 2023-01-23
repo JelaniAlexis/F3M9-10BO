@@ -35,3 +35,8 @@ img {
 textarea {
     resize: none;
 }
+
+*::selection {
+    color: $cta;
+    background: $main-2;
+}

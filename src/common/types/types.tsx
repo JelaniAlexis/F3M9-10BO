@@ -1,4 +1,4 @@
-export type NavbarElementTypes = "Anchor" | "Link"
+export type NavbarElementTypes = "Anchor" | "Link" | "Copy-on-click"
 /**
  * @description The attributes that make up an image.
  * 
@@ -57,7 +57,7 @@ export type NavElement = {
     name: string
     currentPage: boolean
     elementType: NavbarElementTypes
-    location: string
+    target: string
     cta: boolean
 }
 

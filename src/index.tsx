@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
 import CollectionPage from './pages/Collection/CollectionPage';
-import { Collections } from './common/datasets';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Root from './pages/Root';
@@ -23,13 +22,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "collection/:userId",
-                element: <CollectionPage collection={Collections[0]}/>
+                element: <CollectionPage/>
             },
+            {
+                path: '/login',
+                element: <Login/>
+            }
         ]
-    },
-    {
-        path: '/login',
-        element: <Login/>
     },
 ]);
 
