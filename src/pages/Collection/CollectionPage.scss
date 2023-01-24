@@ -18,19 +18,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 12.5%;
+    height: 20%;
     width: 100%;
     gap: 5%;
-}
-
-.filter {
-    height: 100%;
-    width: 20%;
-    border: none;
-    background: $cta;
-    font-size: 150%;
-    font-weight: 600;
-    color: $main-0;
 }
 
 .bigpicture {
@@ -42,10 +32,9 @@
     gap: 5%;
 
     &__img {
-        width: 82.5%;
-        height: 82.5%;
+        width: 80%;
+        height: 80%;
         object-fit: contain;
-        background: $main-4;
     }
 }
 

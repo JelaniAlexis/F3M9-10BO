@@ -9,6 +9,7 @@ import { Agent, DescriptionMode } from '../../common/types/types';
 import './CollectionPage.scss';
 import { useNavContent } from '../Root';
 import { useParams } from 'react-router-dom';
+import CollectionFilter from '../../components/CollectionFilter/CollectionFilter';
 
 const CollectionPage = () => {
 
@@ -17,6 +18,7 @@ const CollectionPage = () => {
     const userId = params.userId as string
 
     const [collection, setCollection] = useState<Agent[]>(findUserCollection());
+    const [filteredCollection, setFilteredCollection] = useState<Agent[]>(collection);
     const [bigPicture, setBigPicture] = useState(collection[0].img);
     const [currentAgent, setCurrentAgent] = useState<number>(0);
     const [descriptionMode, setDescriptionMode] = useState<DescriptionMode>("Display");
@@ -49,15 +51,15 @@ const CollectionPage = () => {
             <section className="items">
                 <div className="bigpicture">
                     <div className="filters">
-                        <button className="filter">Filter #1</button>
-                        <button className="filter">Filter #2</button>
+                        <CollectionFilter collection={collection} output={setFilteredCollection} filterType="Cost" />
+                        <CollectionFilter collection={collection} output={setFilteredCollection} filterType="Role" />
                     </div>
                     <img className="bigpicture__img" draggable={false} src={bigPicture?.url} alt="Geen bestand gevonden."/>
                 </div>
                 
                 <div className="sidebar">
                     {
-                        collection.map((item: Agent, index: number) => item.addButton
+                        filteredCollection.map((item: Agent, index: number) => item.addButton
                             ?
                             <button key={index} className="sidebar__item">
                                 <img className="sidebar__img" src={item.img.url} alt="Een agent." draggable={false}/>

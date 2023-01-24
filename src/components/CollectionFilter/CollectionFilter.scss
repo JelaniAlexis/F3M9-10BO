@@ -1,0 +1,28 @@
+@import 'src/abstracts/colors';
+
+.filter {
+    height: 100%;
+    width: 25%;
+    position: relative;
+    
+    &__filter {
+        height: 100%;
+        width: 100%;
+        border: none;
+        background: $cta;
+        font-size: 150%;
+        font-weight: 600;
+        color: $main-0;
+    }
+
+    &__reset {
+        position: absolute;
+        width: 15%;
+        aspect-ratio: 1 / 1;
+        right: -7.5%;
+        top: -15%;
+        border-radius: 50%;
+        border: none;
+        background: $main-2;
+    }
+}

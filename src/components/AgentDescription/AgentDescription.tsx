@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Agent, AgentClass, agentClasses, DescriptionMode } from "../../common/types/types";
+import { Agent, AgentRole, AgentRoles, DescriptionMode } from "../../common/types/types";
 
 import './AgentDescription.scss';
 
@@ -31,8 +31,8 @@ const AgentDescription = ({agent, descriptionMode, onModeChange, onAgentEdit}: P
                                     <p className="description__text">{agent.description}</p>
                                 </div>
                                 <div className="description__footer">
-                                    <p className="description__class"><b>Rol: </b>{agent.agentClass}</p>
-                                    <p className="description__pricing"><b>Kost:</b> {agent.price}</p>
+                                    <p className="description__class"><b>Rol: </b>{agent.agentRole}</p>
+                                    <p className="description__pricing"><b>Kost:</b> {Intl.NumberFormat("nl-NL").format(agent.agentCost as number)} XP</p>
                                     <p className="description__misc"><b>Overige informatie:</b> {agent.misc}</p>
                                 </div>
                             </div>
@@ -54,14 +54,14 @@ const AgentDescription = ({agent, descriptionMode, onModeChange, onAgentEdit}: P
                                 </div>
                                 <div className="description__footer">
                                     <div className="description__inputContainer">
-                                        <label htmlFor="agentClass" className='description__inputName'><b>Rol: </b></label>
-                                        <select name="agentClass" className="description__input" defaultValue={agent.agentClass} onChange={e => setFormInput({ ...formInput, agentClass: e.currentTarget.value as AgentClass })}>
-                                            { agentClasses.map((agentClassName: string, index: number) => <option key={index} value={agentClassName}>{agentClassName}</option>) }
+                                        <label htmlFor="AgentRole" className='description__inputName'><b>Rol: </b></label>
+                                        <select name="AgentRole" className="description__input" defaultValue={agent.agentRole} onChange={e => setFormInput({ ...formInput, agentRole: e.currentTarget.value as AgentRole })}>
+                                            { AgentRoles.map((AgentRoleName: string, index: number) => <option key={index} value={AgentRoleName}>{AgentRoleName}</option>) }
                                         </select>
                                     </div>
                                     <div className="description__inputContainer">
                                         <label htmlFor="pricing" className='description__inputName'><b>Kost: </b></label>
-                                        <input type="text" name="pricing" className="description__input" defaultValue={agent.price} onChange={e => setFormInput({ ...formInput, price: e.currentTarget.value})} />
+                                        <input type="number" name="pricing" className="description__input" defaultValue={agent.agentCost} onChange={e => setFormInput({ ...formInput, agentCost: parseInt(e.currentTarget.value)})} />
                                     </div>
                                     <div className="description__inputContainer">
                                         <label htmlFor="misc" className='description__inputName'><b>Overige informatie: </b></label>

@@ -61,12 +61,19 @@ export type NavElement = {
     cta: boolean
 }
 
-export const agentClasses = [ "Duelist", "Initiator", "Controller", "Sentinel" ] as const
+export const AgentRoles = [ "Duelist", "Initiator", "Controller", "Sentinel" ] as const;
 /**
  * @description The 4 classifications of Agents.
  *
  */
-export type AgentClass = typeof agentClasses[number];
+export type AgentRole = typeof AgentRoles[number];
+
+export const AgentCosts = [ 0, 375000 ] as const;
+/**
+ * @description The prices an Agent may cost.
+ * 
+ */
+export type AgentCost = typeof AgentCosts[number];
 
 /**
  * @description The attributes that make up an Agent.
@@ -74,9 +81,9 @@ export type AgentClass = typeof agentClasses[number];
  * @param {number} id - The ID of the Agent in the array.
  * @param {string} name - The agent's name.
  * @param {Image} img - The image's attributes.
- * @param {AgentClass} agentClass - The agent's class.
+ * @param {AgentRole} agentRole - The agent's class.
  * @param {string} description - Describes the agent.
- * @param {string} price - The price of the agent.
+ * @param {AgentCost} agentCost - The price of the agent.
  * @param {string} misc - A miscellaneous fact.
  * @param {boolean} addButton - Whether or not this is an Agent or an add button.
  */
@@ -85,9 +92,9 @@ export type Agent = {
     id: number
     name: string
     img: Image
-    agentClass?: AgentClass
+    agentRole?: AgentRole
     description?: string
-    price?: string
+    agentCost?: number
     misc?: string
     addButton: boolean
 }
@@ -104,14 +111,14 @@ export type DescriptionMode = typeof descriptionModes[number];
  * 
  * @param {string} title - The name of the highlighted Agent.
  * @param {string} description - More information on the Agent in question.
- * @param {AgentClass} agentClass - The Agent's class.
+ * @param {AgentRole} agentRole - The Agent's class.
  * @param {string} pricing - The cost of unlocking this Agent.
  * @param {string} misc - Other miscellaneous fact about the Agent.
  */
 export type DescriptionData = {
     title: string
     description: string
-    agentClass: AgentClass
+    agentRole: AgentRole
     pricing: string
     misc: string
 }
