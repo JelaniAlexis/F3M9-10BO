@@ -16,9 +16,9 @@ Project door Jelani Alexis, SD3C. [Klik hier voor de demo.](https://31781.hosts1
 - [x] **US #6:** Als gebruiker wil ik een individueel product kunnen bekijken om informatie over een bepaald product op te zoeken / te vinden.
 - [x] **US #7:** Als gebruiker wil ik producten kunnen onderhouden om mijn collectie te updaten.
 - [x] **US #8:** Als gebruiker wil ik collecties van andere gebruikers kunnen bekijken om inspiratie op te doen.
-- [ ] **US #9:** Als gebruiker ik mijn collectie kunnen filteren zodat ik makkelijk producten kan vinden.
+- [x] **US #9:** Als gebruiker ik mijn collectie kunnen filteren zodat ik makkelijk producten kan vinden.
 - [x] **US #10:** Als gebruiker wil ik mijn collectie makkelijk kunnen delen met vrienden om ze enthousiast te maken.
-- [ ] **US #11:** Als gebruiker wil ik op basis van mijn behoeften en mijn collectie een product voorgeschoteld krijgen zodat ik niet zelf hoef te kiezen
+- [x] **US #11:** Als gebruiker wil ik op basis van mijn behoeften en mijn collectie een product voorgeschoteld krijgen zodat ik niet zelf hoef te kiezen
 
 ### Extra
 - [ ] **US #12** Als gebruiker wil ik producten kunnen toevoegen en kunnen verwijderen zodat mijn collectie up to date blijft.
