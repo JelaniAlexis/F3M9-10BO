@@ -113,7 +113,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
 
     &__container {
         display: grid;
@@ -322,6 +322,10 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .feature3 {
+        grid-area: 2 / 1 / 3 / 3
+    }
+
     .pricing__container {
         width: 70%;
         grid-template-columns: 1fr;
@@ -364,12 +368,17 @@
         }
     }
 
+    .feature3 {
+        grid-area: 1 / 1 / 2 / 2
+    }
+
     .footer__columns {
         grid-template-columns: 5fr 5fr 5fr;
     }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 425px) {
+
     .intro__login {
         width: 80%;
     }

@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
-import CollectionPage from './pages/Collection/CollectionPage';
-import Home from './pages/Home/Home';
-import Login from './pages/Login/Login';
+import CollectionPage from './pages/collection/CollectionPage';
+import Home from './pages/home/Home';
+import Login from './pages/login/Login';
 import Root from './pages/Root';
 
 
 import './index.scss';
+import Backlog from './pages/backlog/Backlog';
+import Logout from './pages/logout/Logout';
 
 const router = createBrowserRouter([
     {
@@ -21,15 +23,23 @@ const router = createBrowserRouter([
                 element: <Home/>
             },
             {
+                path: 'login',
+                element: <Login/>
+            },
+            {
                 path: "collection/:userId",
                 element: <CollectionPage/>
             },
             {
-                path: '/login',
-                element: <Login/>
-            }
+                path: 'backlog/:userId',
+                element: <Backlog/>
+            },
         ]
     },
+    {
+        path: '/logout',
+        element: <Logout/>
+    }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

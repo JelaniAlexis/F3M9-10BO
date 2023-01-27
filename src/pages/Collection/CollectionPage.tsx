@@ -4,7 +4,7 @@ import { Navbars, Collections } from '../../common/datasets';
 
 import missingImage from '../../assets/missing-image.webp';
 import { useEffect, useState } from 'react';
-import { Agent, DescriptionMode } from '../../common/types/types';
+import { Agent, AgentRole, DescriptionMode, NavElement } from '../../common/types/types';
 
 import './CollectionPage.scss';
 import { useNavContent } from '../Root';
@@ -23,6 +23,15 @@ const CollectionPage = () => {
     const [currentAgent, setCurrentAgent] = useState<number>(0);
     const [descriptionMode, setDescriptionMode] = useState<DescriptionMode>("Display");
 
+    const [currentFilters, setCurrentFilters] = useState<{ costFilter: AgentCost | -1, roleFilter: AgentRole | "" }>({
+        costFilter: -1,
+        roleFilter: ""
+    });
+
+    const allAgentsCosts = collection.map((agent: Agent) => agent.agentCost as number)
+    const AgentCosts = [...allAgentsCosts] as const;
+    type AgentCost = typeof AgentCosts[number];
+
     function findUserCollection () {
         let foundIndex: number = 0;
         return Collections.map((userCollection, index: number) => {
@@ -40,10 +49,21 @@ const CollectionPage = () => {
     const onAgentEdit = (newAgent: Agent) => {
         setCollection(collection.map((agent: Agent) => agent.id === newAgent.id ? newAgent : agent ));
     }
+    
+    useEffect(() => {
+        const navbar = Navbars.collectionNavbar.map((navElement: NavElement) => {
+            let newNavElement = navElement;
+            if (navElement.target === "/collection/null") newNavElement.target = `/collection/${sessionStorage.getItem("userId")}`;
+            if (navElement.target === "/backlog/null") newNavElement.target = `/backlog/${sessionStorage.getItem("userId")}`;
+            return newNavElement
+        })
+        setNavContent(navbar);
+    }, [setNavContent]);
 
     useEffect(() => {
-        setNavContent(Navbars.collectionNavbar);
-    }, [setNavContent]);
+        setBigPicture(filteredCollection[0].img);
+        setCurrentAgent(0);
+    }, [filteredCollection])
 
     return (
         <main className="collection">
@@ -51,8 +71,8 @@ const CollectionPage = () => {
             <section className="items">
                 <div className="bigpicture">
                     <div className="filters">
-                        <CollectionFilter collection={collection} output={setFilteredCollection} filterType="Cost" />
-                        <CollectionFilter collection={collection} output={setFilteredCollection} filterType="Role" />
+                        <CollectionFilter collection={collection} output={setFilteredCollection} filter={{currentFilters, setCurrentFilters}} filterType="Cost" />
+                        <CollectionFilter collection={collection} output={setFilteredCollection} filter={{currentFilters, setCurrentFilters}} filterType="Role" />
                     </div>
                     <img className="bigpicture__img" draggable={false} src={bigPicture?.url} alt="Geen bestand gevonden."/>
                 </div>
@@ -77,7 +97,7 @@ const CollectionPage = () => {
                         )
                     }
                 </div>
-                <AgentDescription descriptionMode={descriptionMode} agent={collection[currentAgent]} onModeChange={onModeChange} onAgentEdit={onAgentEdit}/>
+                <AgentDescription descriptionMode={descriptionMode} agent={filteredCollection[currentAgent]} onModeChange={onModeChange} onAgentEdit={onAgentEdit}/>
             </section>
         </main>
     )

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Agent, AgentRole, AgentRoles, DescriptionMode } from "../../common/types/types";
 
 import './AgentDescription.scss';
@@ -12,6 +13,9 @@ interface Props {
 
 const AgentDescription = ({agent, descriptionMode, onModeChange, onAgentEdit}: Props) => {
 
+    const params = useParams();
+    const userId = params.userId as string
+
     const [formInput, setFormInput] = useState<Agent>(agent);
 
     useEffect(() => {
@@ -24,7 +28,7 @@ const AgentDescription = ({agent, descriptionMode, onModeChange, onAgentEdit}: P
                 !descriptionMode || descriptionMode === "Display" ? 
                     (
                         <>
-                            <button className="description__edit" onClick={() => onModeChange("Edit")}><i className="fa-solid fa-pen"></i></button>
+                            { sessionStorage.getItem("userId") === userId ? <button className="description__edit" onClick={() => onModeChange("Edit")}><i className="fa-solid fa-pen"></i></button> : <></> }
                             <div className="description__main">
                                 <div className="description__header">
                                     <h2 className="description__title">{agent.name}</h2>
@@ -69,7 +73,7 @@ const AgentDescription = ({agent, descriptionMode, onModeChange, onAgentEdit}: P
                                     </div>
                                 </div>
                             </form>
-                            <input type="submit" className="description__save" defaultValue="Opslaan" form="agentForm"></input>
+                            <input type="submit" className="description__save" value="Opslaan" form="agentForm"/>
                         </>
                     )
                 :

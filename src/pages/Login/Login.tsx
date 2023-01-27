@@ -36,14 +36,21 @@ const Login = () => {
         }
         Collections.forEach((collection) => collection.userId === username ? isNameMatching = true : null);
         if (isNameMatching) Collections.forEach((collection) => collection.password === password ? isPasswordMatching = true : null);
-        else setLoginError("De gegeven naam is niet gevonden. Probeer het opnieuw.")
-        if (isPasswordMatching) navigate(`/collection/${username}`)
-        else setLoginError("Het gegeven wachtwoord is niet juist. Probeer het opnieuw.")
+        else setLoginError("De gegeven naam is niet gevonden. Probeer het opnieuw.");
+        if (isPasswordMatching) {
+            sessionStorage.setItem("userId", username);
+            navigate(`/collection/${username}`);
+        }
+        else setLoginError("Het gegeven wachtwoord is niet juist. Probeer het opnieuw.");
     }
 
     useEffect(() => {
         setNavContent([]);
     }, [setNavContent]);
+
+    useEffect(() => {
+        if (sessionStorage.getItem("userId") !== null) navigate(`/collection/${sessionStorage.getItem("userId")}`);
+    }, [navigate])
 
     return (
         <div className="login">

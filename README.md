@@ -3,7 +3,7 @@ Dé app voor informatie over Valorant agents.
 
 <img src="/src/assets/logo.webp" alt="Collezione logo" width="300" />
 
-Project door Jelani Alexis, SD3C. [Klik hier voor de demo.](https://31781.hosts1.ma-cloud.nl/collezione)
+Project door Jelani Alexis, SD3C. [Klik hier voor de demo.](https://31781.hosts1.ma-cloud.nl)
 
 ## User Stories
 

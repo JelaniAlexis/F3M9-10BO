@@ -22,7 +22,7 @@ const Home = () => {
     const renderFeatures = (features: Feature[]) => {
         return (
             features.map((feature: Feature, index: number)=> {
-                return ( <FeatureCard key={index} featureObject={feature}/> )
+                return ( <FeatureCard key={index} featureObject={feature} featureIndex={index + 1}/> )
             })
         )
     }

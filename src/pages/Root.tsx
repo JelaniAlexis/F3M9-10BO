@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Outlet, useOutletContext } from "react-router-dom";
+import { Link, Outlet, useOutletContext, useLocation} from "react-router-dom";
 import { NavElement } from "../common/types/types";
 import Hamburger from "../assets/hamburger.webp";
 import Logo from "../assets/logo.webp";
@@ -9,6 +9,8 @@ import './Root.scss';
 type ContextType = { setNavContent: React.Dispatch<React.SetStateAction<NavElement[]>> }
 
 const Root = () => {
+
+    const location = useLocation();
     
     const [navContent, setNavContent] = useState<NavElement[]>([]);
     const [menuOpened, setMenuOpened] = useState<boolean>(false);
@@ -34,7 +36,17 @@ const Root = () => {
                                 case "Link":
                                     return (<Link to={element.target} key={index} className={element.cta ? "navbar__link navbar__cta" : "navbar__link"}>{element.name}</Link>);
                                 case "Copy-on-click":
-                                    return(<button onClick={() => { navigator.clipboard.writeText(element.target); setCopyClicked(true); setTimeout(() => setCopyClicked(false), 500); }} key={index} className={element.cta ? "navbar__link navbar__cta" : "navbar__link"}>{copyClicked ? "Gekopiëerd!" : element.name}</button>);
+                                    return(
+                                        <button onClick={() => {
+                                            if (element.target === "currentlocation") navigator.clipboard.writeText(window.location.host + location.pathname);
+                                            else navigator.clipboard.writeText(element.target);
+                                            setCopyClicked(true);
+                                            setTimeout(() => setCopyClicked(false), 500);
+                                        }} 
+                                        key={index}
+                                        className={element.cta ? "navbar__link navbar__cta" : "navbar__link"}>{copyClicked ? "Gekopiëerd!" : element.name}
+                                        </button>
+                                    );
                                 default:
                                     return (<p>How did you manage...</p>)
                             }

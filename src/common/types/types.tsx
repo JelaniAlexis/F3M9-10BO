@@ -68,13 +68,6 @@ export const AgentRoles = [ "Duelist", "Initiator", "Controller", "Sentinel" ] a
  */
 export type AgentRole = typeof AgentRoles[number];
 
-export const AgentCosts = [ 0, 375000 ] as const;
-/**
- * @description The prices an Agent may cost.
- * 
- */
-export type AgentCost = typeof AgentCosts[number];
-
 /**
  * @description The attributes that make up an Agent.
  * 
