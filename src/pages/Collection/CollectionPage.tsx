@@ -47,6 +47,7 @@ const CollectionPage = () => {
     }
 
     const onAgentEdit = (newAgent: Agent) => {
+        console.log(newAgent);
         setCollection(collection.map((agent: Agent) => agent.id === newAgent.id ? newAgent : agent ));
     }
     
@@ -59,6 +60,11 @@ const CollectionPage = () => {
         })
         setNavContent(navbar);
     }, [setNavContent]);
+
+    useEffect(() => {
+        setFilteredCollection(collection);
+        setCurrentFilters({ costFilter: -1, roleFilter: "" });
+    }, [collection])
 
     useEffect(() => {
         setBigPicture(filteredCollection[0].img);
